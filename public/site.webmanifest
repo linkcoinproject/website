@@ -1,0 +1,16 @@
+{
+  "name": "Linkcoin",
+  "short_name": "Linkcoin",
+  "description": "Complete Blockchain Development Suite",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#6eff75",
+  "icons": [
+    {
+      "src": "/images/dedoo-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+:root {
+  /* Base theme colors */
+  --background: #0a0f14;
+  --surface: #131c24;
+  --card: #1a2630;
+  --card-hover: #212d38;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+
+  /* Brand colors */
+  --primary: #00ffb3;
+  --primary-dark: #00cc8f;
+  --primary-gradient: linear-gradient(to right, #00ffb3, #00cc8f);
+
+  /* Accent colors */
+  --accent: #3d6cff; 
+  --accent-dark: #1e4dff;
+  --accent-gradient: linear-gradient(to right, #3d6cff, #1e4dff);
+
+  /* Border colors */
+  --border-light: rgba(0, 255, 179, 0.1);
+  --border-hover: rgba(0, 255, 179, 0.2);
+}
