@@ -28,7 +28,7 @@ export default function LandingFooter() {
               <li>
                 <a
                   className="hover:text-primary transition-colors"
-                  href="https://pool.linkcoinchain.com"
+                  href="https://mine.linkcoinchain.com"
                 >
                   Mining Pools
                 </a>

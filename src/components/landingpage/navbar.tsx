@@ -19,7 +19,7 @@ const navItems = [
     ]
   },
   { label: "Explorer", href: "https://explorer.linkcoinchain.com" },
-  { label: "Mining Pool", href: "https://pool.linkcoinchain.com" },
+  { label: "Mining Pool", href: "https://mine.linkcoinchain.com" },
   {
     label: "Wallet",
     href: "#",

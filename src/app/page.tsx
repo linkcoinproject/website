@@ -94,7 +94,7 @@ export default function Home() {
                 Download Wallet
               </a>
               <a
-                href="https://pool.linkcoinchain.com"
+                href="https://mine.linkcoinchain.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-12 px-8 rounded-full border border-[#e9e8ce] dark:border-[#383726] bg-transparent hover:bg-neutral-100 dark:hover:bg-[#23220f] dark:text-white text-[#1c1c0d] font-bold text-base transition-all hover:scale-105 flex items-center justify-center gap-2"
@@ -325,7 +325,7 @@ export default function Home() {
               </div>
               <div className="relative z-10">
                 <a
-                  href="https://pool.linkcoinchain.com"
+                  href="https://mine.linkcoinchain.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
