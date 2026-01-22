@@ -4,9 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import LandingFooter from "@/components/landingpage/footer";
+import content from "@/data/content.json";
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { home } = content;
   const [stats, setStats] = useState({
     hashrate: 0,
     difficulty: 0,
@@ -39,22 +40,22 @@ export default function Home() {
     if (hashrate > 1e15) return `${(hashrate / 1e15).toFixed(2)} PH/s`;
     if (hashrate > 1e12) return `${(hashrate / 1e12).toFixed(2)} TH/s`;
     if (hashrate > 1e9) return `${(hashrate / 1e9).toFixed(2)} GH/s`;
-    return `${(hashrate / 1e6).toFixed(2)} MH/s`;
+    return `${((hashrate || 0) / 1e6).toFixed(2)} MH/s`;
   };
 
   const formatSupply = (supply: number) => {
     if (!supply) return "Loading...";
-    return `${(supply / 1e6).toFixed(2)}M`;
+    return `${((supply || 0) / 1e6).toFixed(2)}M`;
   };
 
   const formatDifficulty = (difficulty: number) => {
     if (!difficulty) return "Loading...";
-    return difficulty.toFixed(2);
+    return (difficulty || 0).toFixed(2);
   };
 
   const formatHeight = (height: number) => {
     if (!height) return "Loading...";
-    return height.toLocaleString();
+    return (height || 0).toLocaleString();
   };
 
   return (
@@ -69,21 +70,18 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 w-fit">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
               <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                Mainnet Live
+                {home.hero.badge}
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black leading-[0.95] tracking-tighter dark:text-white">
-              The OG LinkCoin.<br />
-              <span className="text-primary/90">Reimagined.</span>
+            <h1 className="text-5xl md:text-7xl font-black leading-[0.95] tracking-tighter dark:text-white whitespace-pre-line">
+              {home.hero.title}
             </h1>
             <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed max-w-lg">
-              Born in 2014. Revived for a hyper-connected future. Fast,
-              efficient, and scalable — $LNC brings OG crypto back to life and
-              keeps the world linked.
+              {home.hero.subtitle}
             </p>
             <div className="flex flex-wrap gap-4 mt-2">
               <a
-                href="https://github.com/linkcoinproject/linkcoin/releases"
+                href={home.hero.primaryCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-12 px-8 rounded-full bg-primary hover:bg-[#e6e205] text-[#1c1c0d] font-bold text-base transition-all hover:scale-105 flex items-center justify-center gap-2"
@@ -91,10 +89,10 @@ export default function Home() {
                 <span className="material-symbols-outlined text-[20px]">
                   download
                 </span>
-                Download Wallet
+                {home.hero.primaryCta.label}
               </a>
               <a
-                href="https://mine.linkcoinchain.com"
+                href={home.hero.secondaryCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-12 px-8 rounded-full border border-[#e9e8ce] dark:border-[#383726] bg-transparent hover:bg-neutral-100 dark:hover:bg-[#23220f] dark:text-white text-[#1c1c0d] font-bold text-base transition-all hover:scale-105 flex items-center justify-center gap-2"
@@ -102,15 +100,15 @@ export default function Home() {
                 <span className="material-symbols-outlined text-[20px]">
                   memory
                 </span>
-                Start Mining
+                {home.hero.secondaryCta.label}
               </a>
               <a
-                href="https://explorer.linkcoinchain.com"
+                href={home.hero.tertiaryCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-12 px-6 rounded-full text-neutral-600 dark:text-neutral-400 font-medium hover:text-primary transition-colors flex items-center justify-center gap-2"
               >
-                View Explorer
+                {home.hero.tertiaryCta.label}
                 <span className="material-symbols-outlined text-[18px]">
                   arrow_forward
                 </span>
@@ -120,7 +118,7 @@ export default function Home() {
           <div className="relative w-full aspect-square md:aspect-video lg:aspect-square lg:h-auto rounded-xl overflow-hidden shadow-2xl border border-[#e9e8ce] dark:border-[#383726] bg-surface-dark group">
             <div
               className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-60"
-              data-alt="Abstract dark blockchain network visualization with glowing nodes"
+              data-alt={home.hero.imageAlt}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
             <div className="absolute bottom-8 left-8 right-8 p-6 rounded-xl bg-background-light/10 dark:bg-white/5 backdrop-blur-md border border-white/10">
@@ -153,64 +151,25 @@ export default function Home() {
       >
         <div className="max-w-[1280px] mx-auto px-4 md:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="flex flex-col gap-1 p-4">
-              <div className="flex items-center gap-2 mb-2 text-neutral-500 dark:text-neutral-400">
-                <span className="material-symbols-outlined text-[20px]">
-                  speed
-                </span>
-                <p className="text-sm font-medium uppercase tracking-wider">
-                  Hashrate
+            {home.stats.map((stat, index) => (
+              <div key={stat.label} className={`flex flex-col gap-1 p-4 ${index > 0 ? 'border-l border-[#e9e8ce] dark:border-[#383726]' : ''}`}>
+                <div className="flex items-center gap-2 mb-2 text-neutral-500 dark:text-neutral-400">
+                  <span className="material-symbols-outlined text-[20px]">
+                    {stat.icon}
+                  </span>
+                  <p className="text-sm font-medium uppercase tracking-wider">
+                    {stat.label}
+                  </p>
+                </div>
+                <p className="text-2xl md:text-3xl font-bold dark:text-white tracking-tight">
+                  {stat.label === "Hashrate" ? formatHashrate(stats.hashrate) :
+                    stat.label === "Difficulty" ? formatDifficulty(stats.difficulty) :
+                      stat.label === "Height" ? formatHeight(stats.height) :
+                        formatSupply(stats.supply)}
                 </p>
+                <p className="text-sm text-[#078816] font-medium">{stat.label === "Supply" ? "Circulating" : "Live"}</p>
               </div>
-              <p className="text-2xl md:text-3xl font-bold dark:text-white tracking-tight">
-                {formatHashrate(stats.hashrate)}
-              </p>
-              <p className="text-sm text-[#078816] font-medium">Realtime</p>
-            </div>
-            <div className="flex flex-col gap-1 p-4 border-l border-[#e9e8ce] dark:border-[#383726]">
-              <div className="flex items-center gap-2 mb-2 text-neutral-500 dark:text-neutral-400">
-                <span className="material-symbols-outlined text-[20px]">
-                  deployed_code
-                </span>
-                <p className="text-sm font-medium uppercase tracking-wider">
-                  Difficulty
-                </p>
-              </div>
-              <p className="text-2xl md:text-3xl font-bold dark:text-white tracking-tight">
-                {formatDifficulty(stats.difficulty)}
-              </p>
-              <p className="text-sm text-[#078816] font-medium">Realtime</p>
-            </div>
-            <div className="flex flex-col gap-1 p-4 border-l border-[#e9e8ce] dark:border-[#383726]">
-              <div className="flex items-center gap-2 mb-2 text-neutral-500 dark:text-neutral-400">
-                <span className="material-symbols-outlined text-[20px]">
-                  view_in_ar
-                </span>
-                <p className="text-sm font-medium uppercase tracking-wider">
-                  Height
-                </p>
-              </div>
-              <p className="text-2xl md:text-3xl font-bold dark:text-white tracking-tight">
-                {formatHeight(stats.height)}
-              </p>
-              <p className="text-sm text-[#078816] font-medium">Live</p>
-            </div>
-            <div className="flex flex-col gap-1 p-4 border-l border-[#e9e8ce] dark:border-[#383726]">
-              <div className="flex items-center gap-2 mb-2 text-neutral-500 dark:text-neutral-400">
-                <span className="material-symbols-outlined text-[20px]">
-                  account_balance_wallet
-                </span>
-                <p className="text-sm font-medium uppercase tracking-wider">
-                  Supply
-                </p>
-              </div>
-              <p className="text-2xl md:text-3xl font-bold dark:text-white tracking-tight">
-                {formatSupply(stats.supply)}
-              </p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-500 font-medium">
-                Circulating
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -219,21 +178,18 @@ export default function Home() {
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-4 flex flex-col justify-start">
-              <h2 className="text-3xl md:text-4xl font-bold dark:text-white mb-6">
-                The Legacy.<br />
-                The Future.
+              <h2 className="text-3xl md:text-4xl font-bold dark:text-white mb-6 whitespace-pre-line">
+                {home.about.title}
               </h2>
               <div className="w-20 h-1 bg-primary rounded-full"></div>
             </div>
             <div className="md:col-span-8 flex flex-col gap-8">
               <p className="text-lg md:text-xl leading-relaxed text-neutral-600 dark:text-neutral-300">
-                LinkCoin isn&apos;t just another token. It&apos;s a piece of crypto
-                history, forged in the early days of 2014 and meticulously
-                maintained by a dedicated community of cypherpunks and developers.
+                {home.about.description}
               </p>
               <div>
                 <a
-                  href="https://bitcointalk.org/index.php?topic=724057.0"
+                  href={home.about.announcementLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
@@ -245,30 +201,19 @@ export default function Home() {
                 </a>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="p-6 rounded-xl bg-white dark:bg-[#23220f] border border-[#e9e8ce] dark:border-[#383726]">
-                  <span className="material-symbols-outlined text-primary text-[32px] mb-4">
-                    public
-                  </span>
-                  <h3 className="text-lg font-bold dark:text-white mb-2">
-                    Truly Decentralized
-                  </h3>
-                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">
-                    No CEO, no headquarters, no pre-mine. Owned by the people
-                    who hold it.
-                  </p>
-                </div>
-                <div className="p-6 rounded-xl bg-white dark:bg-[#23220f] border border-[#e9e8ce] dark:border-[#383726]">
-                  <span className="material-symbols-outlined text-primary text-[32px] mb-4">
-                    bolt
-                  </span>
-                  <h3 className="text-lg font-bold dark:text-white mb-2">
-                    Fast & Low Fee
-                  </h3>
-                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">
-                    Optimized for micro-transactions with near-instant
-                    settlement times.
-                  </p>
-                </div>
+                {home.about.features.map((feature) => (
+                  <div key={feature.title} className="p-6 rounded-xl bg-white dark:bg-[#23220f] border border-[#e9e8ce] dark:border-[#383726]">
+                    <span className="material-symbols-outlined text-primary text-[32px] mb-4">
+                      {feature.icon}
+                    </span>
+                    <h3 className="text-lg font-bold dark:text-white mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -283,10 +228,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">
-                The Ecosystem
+                {home.ecosystem.subtitle}
               </span>
               <h2 className="text-3xl md:text-5xl font-black dark:text-white tracking-tight">
-                Built for Builders
+                {home.ecosystem.title}
               </h2>
             </div>
             <a
@@ -302,105 +247,45 @@ export default function Home() {
             </a>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Mining Card */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-background-light dark:bg-background-dark border border-[#e9e8ce] dark:border-[#383726] p-8 h-[400px] flex flex-col justify-between transition-all hover:border-primary/50">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-[120px]">
-                  hardware
-                </span>
-              </div>
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-black">
-                    construction
+            {home.ecosystem.cards.map((card) => (
+              <div key={card.title} className="group relative overflow-hidden rounded-[2rem] bg-background-light dark:bg-background-dark border border-[#e9e8ce] dark:border-[#383726] p-8 h-[400px] flex flex-col justify-between transition-all hover:border-primary/50">
+                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <span className="material-symbols-outlined text-[120px]">
+                    {card.title === "Mining" ? "hardware" : card.title === "Block Explorer" ? "search" : "groups"}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold dark:text-white mb-2">
-                  Mining
-                </h3>
-                <p className="text-neutral-500 dark:text-neutral-400">
-                  Join the pool. Secure the chain. ASIC-resistant algorithms
-                  mean fair distribution for everyone.
-                </p>
-              </div>
-              <div className="relative z-10">
-                <a
-                  href="https://mine.linkcoinchain.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-primary hover:border-primary hover:text-black dark:text-white dark:hover:text-black transition-all font-bold">
-                    Start Mining
-                  </button>
-                </a>
-              </div>
-            </div>
-            {/* Explorer Card */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-background-light dark:bg-background-dark border border-[#e9e8ce] dark:border-[#383726] p-8 h-[400px] flex flex-col justify-between transition-all hover:border-primary/50">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-[120px]">
-                  search
-                </span>
-              </div>
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-full bg-surface-dark dark:bg-white flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-white dark:text-black">
-                    travel_explore
-                  </span>
+                <div className="relative z-10">
+                  <div className={`w-12 h-12 rounded-full ${card.title === "Mining" ? "bg-primary" : "bg-surface-dark dark:bg-white"} flex items-center justify-center mb-6`}>
+                    <span className={`material-symbols-outlined ${card.title === "Mining" ? "text-black" : "text-white dark:text-black"}`}>
+                      {card.icon}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold dark:text-white mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-neutral-500 dark:text-neutral-400">
+                    {card.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold dark:text-white mb-2">
-                  Block Explorer
-                </h3>
-                <p className="text-neutral-500 dark:text-neutral-400">
-                  Transparent, real-time ledger access. Track transactions,
-                  verify blocks, and analyze network health.
-                </p>
-              </div>
-              <div className="relative z-10">
-                <a
-                  href="https://explorer.linkcoinchain.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-white hover:text-black dark:text-white dark:hover:bg-white dark:hover:text-black transition-all font-bold">
-                    Search Chain
-                  </button>
-                </a>
-              </div>
-            </div>
-            {/* Community Card */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-background-light dark:bg-background-dark border border-[#e9e8ce] dark:border-[#383726] p-8 h-[400px] flex flex-col justify-between transition-all hover:border-primary/50">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-[120px]">
-                  groups
-                </span>
-              </div>
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-full bg-surface-dark dark:bg-white flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-white dark:text-black">
-                    forum
-                  </span>
+                <div className={`relative z-10 ${card.buttons ? 'flex flex-col gap-3' : ''}`}>
+                  {card.buttons ? (
+                    card.buttons.map((btn) => (
+                      <a key={btn.label} href={btn.href} target="_blank" rel="noopener noreferrer">
+                        <button className={`w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 transition-all font-bold ${btn.variant === 'discord' ? 'hover:bg-[#5865F2] hover:border-[#5865F2] hover:text-white' : 'hover:bg-white hover:text-black dark:text-white dark:hover:bg-white dark:hover:text-black'}`}>
+                          {btn.label}
+                        </button>
+                      </a>
+                    ))
+                  ) : (
+                    <a href={card.href} target="_blank" rel="noopener noreferrer">
+                      <button className={`w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-primary hover:border-primary hover:text-black dark:text-white dark:hover:text-black transition-all font-bold`}>
+                        {card.buttonText}
+                      </button>
+                    </a>
+                  )}
                 </div>
-                <h3 className="text-2xl font-bold dark:text-white mb-2">
-                  Community
-                </h3>
-                <p className="text-neutral-500 dark:text-neutral-400">
-                  Governance by the people. Join our Telegram to participate in
-                  the future of LinkCoin.
-                </p>
               </div>
-              <div className="relative z-10">
-                <a
-                  href="https://t.me/Linkcoin_LNC"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-white hover:text-black dark:text-white dark:hover:bg-white dark:hover:text-black transition-all font-bold">
-                    Join Telegram
-                  </button>
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -413,30 +298,29 @@ export default function Home() {
           ></div>
           <div className="relative z-10 flex flex-col items-center justify-center py-20 px-6 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-black mb-6 tracking-tight">
-              Ready to join the network?
+              {home.cta.title}
             </h2>
             <p className="text-lg md:text-xl text-neutral-800 max-w-2xl mb-10 font-medium">
-              Download the core wallet today and start your journey into the
-              decentralized future of LinkCoin.
+              {home.cta.description}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://github.com/linkcoinproject/linkcoin/releases"
+                href={home.cta.primaryButton.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-14 px-8 rounded-full bg-black text-white hover:bg-neutral-800 font-bold text-lg transition-all hover:scale-105 shadow-lg flex items-center gap-2"
               >
                 <span className="material-symbols-outlined">download</span>
-                Download v0.9.2
+                {home.cta.primaryButton.label}
               </a>
               <a
-                href="https://github.com/linkcoinproject"
+                href={home.cta.secondaryButton.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-14 px-8 rounded-full border-2 border-black text-black hover:bg-black hover:text-white font-bold text-lg transition-all flex items-center gap-2"
               >
                 <span className="material-symbols-outlined">terminal</span>
-                View Source
+                {home.cta.secondaryButton.label}
               </a>
             </div>
           </div>

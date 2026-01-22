@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import content from "@/data/content.json";
 
 export default function LandingFooter() {
   const currentYear = new Date().getFullYear();
+  const { footer, site } = content;
 
   return (
     <footer className="bg-background-light dark:bg-background-dark border-t border-[#e9e8ce] dark:border-[#383726] pt-16 pb-8 px-4 md:px-10">
@@ -16,107 +18,40 @@ export default function LandingFooter() {
                   link
                 </span>
               </div>
-              <h3 className="text-lg font-bold dark:text-white">LinkCoin</h3>
+              <h3 className="text-lg font-bold dark:text-white">{site.name}</h3>
             </div>
             <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
-              The OG LinkCoin. Reimagined for a decentralized future.
+              {footer.description}
             </p>
           </div>
-          <div>
-            <h4 className="font-bold dark:text-white mb-6">Ecosystem</h4>
-            <ul className="flex flex-col gap-4 text-sm text-neutral-500 dark:text-neutral-400">
-              <li>
-                <a
-                  className="hover:text-primary transition-colors"
-                  href="https://mine.linkcoinchain.com"
-                >
-                  Mining Pools
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-primary transition-colors" href="#">
-                  Exchanges
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-primary transition-colors"
-                  href="https://github.com/linkcoinproject/linkcoin/releases"
-                >
-                  Wallets
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-primary transition-colors"
-                  href="https://explorer.linkcoinchain.com"
-                >
-                  Block Explorer
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold dark:text-white mb-6">Resources</h4>
-            <ul className="flex flex-col gap-4 text-sm text-neutral-500 dark:text-neutral-400">
-              <li>
-                <a className="hover:text-primary transition-colors" href="#">
-                  Whitepaper
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-primary transition-colors" href="#">
-                  API Documentation
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-primary transition-colors" href="#">
-                  Brand Assets
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-primary transition-colors"
-                  href="https://github.com/linkcoinproject"
-                >
-                  Github
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold dark:text-white mb-6">Community</h4>
-            <ul className="flex flex-col gap-4 text-sm text-neutral-500 dark:text-neutral-400">
-              <li>
-                <a
-                  className="hover:text-primary transition-colors"
-                  href="https://t.me/Linkcoin_LNC"
-                >
-                  Telegram
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-primary transition-colors"
-                  href="https://x.com/Linkcoin_LNC"
-                >
-                  Twitter / X
-                </a>
-              </li>
-            </ul>
-          </div>
+          {footer.sections.map((section) => (
+            <div key={section.title}>
+              <h4 className="font-bold dark:text-white mb-6">{section.title}</h4>
+              <ul className="flex flex-col gap-4 text-sm text-neutral-500 dark:text-neutral-400">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      className="hover:text-primary transition-colors"
+                      href={link.href}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         <div className="border-t border-[#e9e8ce] dark:border-[#383726] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-neutral-400">
-            © {currentYear} LinkCoin Community. Open Source MIT License.
+            {footer.copyright.replace("{year}", currentYear.toString())}
           </p>
           <div className="flex items-center gap-6">
-            <Link className="text-xs text-neutral-400 hover:text-white" href="/privacy-policy">
-              Privacy Policy
-            </Link>
-            <Link className="text-xs text-neutral-400 hover:text-white" href="/terms-of-service">
-              Terms of Service
-            </Link>
+            {footer.links.map((link) => (
+              <Link key={link.label} className="text-xs text-neutral-400 hover:text-white" href={link.href}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -1,0 +1,487 @@
+{
+    "site": {
+        "name": "LinkCoin",
+        "tagline": "The OG LinkCoin. Reimagined for a decentralized future.",
+        "links": {
+            "telegram": "https://t.me/Linkcoin_LNC",
+            "twitter": "https://x.com/Linkcoin_LNC",
+            "discord": "https://discord.gg/eHe6jMgd",
+            "github": "https://github.com/linkcoinproject",
+            "explorer": "https://explorer.linkcoinchain.com/",
+            "explorerDedoo": "https://linkcoin-explorer.dedoo.xyz/",
+            "mining": "https://mine.linkcoinchain.com",
+            "whitepaper": "#",
+            "wallets": "https://github.com/linkcoinproject/linkcoin/releases",
+            "walletDedoo": "https://wallet.dedoo.xyz/",
+            "miningPoolList": "https://miningpoolstats.stream/linkcoin"
+        }
+    },
+    "navigation": [
+        {
+            "label": "Home",
+            "href": "/"
+        },
+        {
+            "label": "Community",
+            "href": "#",
+            "subMenu": [
+                {
+                    "label": "Telegram",
+                    "href": "https://t.me/Linkcoin_LNC"
+                },
+                {
+                    "label": "Twitter / X",
+                    "href": "https://x.com/Linkcoin_LNC"
+                },
+                {
+                    "label": "Discord",
+                    "href": "https://discord.gg/eHe6jMgd"
+                },
+                {
+                    "label": "GitHub",
+                    "href": "https://github.com/linkcoinproject"
+                }
+            ]
+        },
+        {
+            "label": "Explorer",
+            "href": "#",
+            "subMenu": [
+                {
+                    "label": "Official Explorer",
+                    "href": "https://explorer.linkcoinchain.com/"
+                },
+                {
+                    "label": "Dedoo Explorer",
+                    "href": "https://linkcoin-explorer.dedoo.xyz/"
+                }
+            ]
+        },
+        {
+            "label": "Mining",
+            "href": "#",
+            "subMenu": [
+                {
+                    "label": "Official Pool",
+                    "href": "https://mine.linkcoinchain.com"
+                },
+                {
+                    "label": "Mining Pool Stats",
+                    "href": "https://miningpoolstats.stream/linkcoin"
+                }
+            ]
+        },
+        {
+            "label": "Wallet",
+            "href": "#",
+            "subMenu": [
+                {
+                    "label": "Core Wallet",
+                    "href": "https://github.com/linkcoinproject/linkcoin/releases"
+                },
+                {
+                    "label": "Dedoo Wallet",
+                    "href": "https://wallet.dedoo.xyz/"
+                }
+            ]
+        },
+        {
+            "label": "About",
+            "href": "/#about"
+        }
+    ],
+    "home": {
+        "hero": {
+            "badge": "Mainnet Live",
+            "title": "The OG LinkCoin.\nReimagined.",
+            "subtitle": "Born in 2014. A Proof-of-Work blockchain focused on stability, restraint, and long-term readability.",
+            "imageAlt": "Abstract dark blockchain network visualization with glowing nodes",
+            "primaryCta": {
+                "label": "Download Wallet",
+                "href": "https://github.com/linkcoinproject/linkcoin/releases"
+            },
+            "secondaryCta": {
+                "label": "Explore Mining",
+                "href": "https://mine.linkcoinchain.com"
+            },
+            "tertiaryCta": {
+                "label": "View Explorer",
+                "href": "https://explorer.linkcoinchain.com"
+            }
+        },
+        "stats": [
+            {
+                "label": "Hashrate",
+                "icon": "speed"
+            },
+            {
+                "label": "Difficulty",
+                "icon": "deployed_code"
+            },
+            {
+                "label": "Height",
+                "icon": "view_in_ar"
+            },
+            {
+                "label": "Supply",
+                "icon": "account_balance_wallet"
+            }
+        ],
+        "about": {
+            "title": "The Legacy.\nThe Future.",
+            "description": "LinkCoin isn't just another token. It's a piece of crypto history, forged in the early days of 2014 and meticulously maintained by a dedicated community of cypherpunks and developers.",
+            "announcementLink": "https://bitcointalk.org/index.php?topic=724057.0",
+            "features": [
+                {
+                    "title": "Truly Decentralized",
+                    "description": "No CEO, no headquarters, no pre-mine. Owned by the people who hold it.",
+                    "icon": "public"
+                },
+                {
+                    "title": "Fast & Low Fee",
+                    "description": "Optimized for micro-transactions with near-instant settlement times.",
+                    "icon": "bolt"
+                }
+            ]
+        },
+        "ecosystem": {
+            "title": "Built for Builders",
+            "subtitle": "The Ecosystem",
+            "cards": [
+                {
+                    "title": "Explore Mining",
+                    "description": "No promises. No roadmap. A protocol preserved and operated by its community.",
+                    "icon": "construction",
+                    "buttons": [
+                        {
+                            "label": "Official Pool",
+                            "href": "https://mine.linkcoinchain.com"
+                        },
+                        {
+                            "label": "Pool Stats",
+                            "href": "https://miningpoolstats.stream/linkcoin"
+                        }
+                    ]
+                },
+                {
+                    "title": "Block Explorer",
+                    "description": "Transparent, real-time ledger access. Track transactions, verify blocks, and analyze network health.",
+                    "icon": "travel_explore",
+                    "buttons": [
+                        {
+                            "label": "Official Explorer",
+                            "href": "https://explorer.linkcoinchain.com/"
+                        },
+                        {
+                            "label": "Dedoo Explorer",
+                            "href": "https://linkcoin-explorer.dedoo.xyz/"
+                        }
+                    ]
+                },
+                {
+                    "title": "Community",
+                    "description": "Governance by the people. Join our community to participate in the future of LinkCoin.",
+                    "icon": "forum",
+                    "buttons": [
+                        {
+                            "label": "Join Telegram",
+                            "href": "https://t.me/Linkcoin_LNC",
+                            "variant": "telegram"
+                        },
+                        {
+                            "label": "Join Discord",
+                            "href": "https://discord.gg/eHe6jMgd",
+                            "variant": "discord"
+                        }
+                    ]
+                }
+            ]
+        },
+        "cta": {
+            "title": "Ready to join the network?",
+            "description": "Download the core wallet today and start your journey into the decentralized future of LinkCoin.",
+            "primaryButton": {
+                "label": "Download v0.9.2",
+                "href": "https://github.com/linkcoinproject/linkcoin/releases"
+            },
+            "secondaryButton": {
+                "label": "View Source",
+                "href": "https://github.com/linkcoinproject"
+            }
+        }
+    },
+    "about": {
+        "title": "About LinkCoin",
+        "description": "LinkCoin is a community-driven Layer-1 revival project built on pure passion, open-source spirit, and the energy of the Junkies. No promises — only chaos, innovation, and decentralized growth.",
+        "timeline": [
+            {
+                "year": "2013",
+                "title": "Early Experimental Era",
+                "desc": "LinkCoin appeared among the earliest altcoins, experimenting with early blockchain mechanics and PoW distribution."
+            },
+            {
+                "year": "2013–2016",
+                "title": "Mining Phase",
+                "desc": "The network operated quietly, sustained by miners who secured the chain with grassroots power."
+            },
+            {
+                "year": "2016–2023",
+                "title": "Dormant Chain",
+                "desc": "Like many early altcoins, LinkCoin entered a frozen era — untouched, unnoticed, yet never dead."
+            },
+            {
+                "year": "2023–Now",
+                "title": "The Community Revival",
+                "desc": "The Junkies reignite LinkCoin. No dev team. No VC. No roadmap. Pure community energy reviving a forgotten chain."
+            }
+        ],
+        "historicalRecords": [
+            {
+                "title": "Original LinkCoin Thread",
+                "desc": "Archived discussion preserving LinkCoin’s early presence.",
+                "href": "https://bitcointalk.org/index.php?topic=194756.0"
+            }
+        ],
+        "community": {
+            "title": "Join the Junkies",
+            "description": "The LinkCoin revival is powered entirely by the community. No leaders. No hierarchy. The chain lives because we choose to keep it alive.",
+            "buttons": [
+                {
+                    "label": "Join Telegram",
+                    "href": "https://t.me/Linkcoin_LNC"
+                },
+                {
+                    "label": "Follow Twitter",
+                    "href": "https://x.com/Linkcoin_LNC"
+                },
+                {
+                    "label": "Join Discord",
+                    "href": "https://discord.gg/eHe6jMgd"
+                }
+            ]
+        }
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about Linkcoin",
+        "items": [
+            {
+                "question": "What is Linkcoin (LNC)?",
+                "answer": "Linkcoin is one of the oldest memecoins in cryptocurrency history, created in May 2013 (UCID #26 on CoinMarketCap) as a fork of Litecoin. Originally created as a joke, it was abandoned in 2016 but has since been revived by the community."
+            },
+            {
+                "question": "How can I mine Linkcoin?",
+                "answer": "Linkcoin uses the Scrypt algorithm and can be merge-mined with Litecoin, meaning you can mine both coins simultaneously. You can use any Scrypt-compatible ASIC miner or mining pool that supports merge mining."
+            },
+            {
+                "question": "Where can I buy Linkcoin?",
+                "answer": "Linkcoin (LNC) is available on several exchanges including CoinEx, AscendEX, and NonKYC.io. You can trade it against USDT pairs."
+            },
+            {
+                "question": "Which wallets support Linkcoin?",
+                "answer": "Linkcoin is supported by multiple wallets including Dedoo Wallet, Komodo Wallet, and our official Core Wallet. Each offers different features and security levels."
+            },
+            {
+                "question": "Is Linkcoin a serious project?",
+                "answer": "While Linkcoin started as a joke in 2013, it has become a significant part of crypto history as one of the earliest memecoins and an inspiration for later projects like Dogecoin. The community revival aims to preserve this historical significance while adding modern utility."
+            },
+            {
+                "question": "What makes Linkcoin special?",
+                "answer": "Linkcoin holds a unique place in crypto history as one of the earliest memecoins (UCID #26), predating even Dogecoin. It's also one of the few early coins to be successfully revived by its community."
+            },
+            {
+                "question": "How can I get involved?",
+                "answer": "Join our community, follow us on social media, participate in mining, or contribute to development on GitHub. Linkcoin is 100% community-driven, so all contributions are welcome."
+            }
+        ],
+        "support": {
+            "title": "Still have questions?",
+            "description": "Join our community for direct support and updates"
+        }
+    },
+    "footer": {
+        "description": "The OG LinkCoin. Reimagined for a decentralized future.",
+        "sections": [
+            {
+                "title": "Ecosystem",
+                "links": [
+                    {
+                        "label": "Official Pool",
+                        "href": "https://mine.linkcoinchain.com"
+                    },
+                    {
+                        "label": "Mining Pool Stats",
+                        "href": "https://miningpoolstats.stream/linkcoin"
+                    },
+                    {
+                        "label": "Exchanges",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Core Wallet",
+                        "href": "https://github.com/linkcoinproject/linkcoin/releases"
+                    },
+                    {
+                        "label": "Dedoo Wallet",
+                        "href": "https://wallet.dedoo.xyz/"
+                    },
+                    {
+                        "label": "Official Explorer",
+                        "href": "https://explorer.linkcoinchain.com/"
+                    },
+                    {
+                        "label": "Dedoo Explorer",
+                        "href": "https://linkcoin-explorer.dedoo.xyz/"
+                    }
+                ]
+            },
+            {
+                "title": "Resources",
+                "links": [
+                    {
+                        "label": "Whitepaper",
+                        "href": "#"
+                    },
+                    {
+                        "label": "API Documentation",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Brand Assets",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Github",
+                        "href": "https://github.com/linkcoinproject"
+                    }
+                ]
+            },
+            {
+                "title": "Community",
+                "links": [
+                    {
+                        "label": "Telegram",
+                        "href": "https://t.me/Linkcoin_LNC"
+                    },
+                    {
+                        "label": "Twitter / X",
+                        "href": "https://x.com/Linkcoin_LNC"
+                    },
+                    {
+                        "label": "Discord",
+                        "href": "https://discord.gg/eHe6jMgd"
+                    }
+                ]
+            }
+        ],
+        "copyright": "© {year} LinkCoin Community. Open Source MIT License.",
+        "links": [
+            {
+                "label": "Privacy Policy",
+                "href": "/privacy-policy"
+            },
+            {
+                "label": "Terms of Service",
+                "href": "/terms-of-service"
+            }
+        ]
+    },
+    "legal": {
+        "terms": {
+            "title": "Terms of Service",
+            "sections": [
+                {
+                    "title": "1. Acceptance of Terms",
+                    "content": "By accessing and using the website linkcoinchain.com (the \"Service\") operated by the LinkCoin community (\"us\", \"we\", or \"our\"), you accept and agree to be bound by the terms and provision of this agreement."
+                },
+                {
+                    "title": "2. Description of Service",
+                    "content": "LinkCoin provides a decentralized blockchain network and associated information. The Service is provided \"as is\" and is for informational purposes only. We do not provide financial advice, and nothing on this Service should be construed as such."
+                },
+                {
+                    "title": "3. CryptoRisks",
+                    "content": "You acknowledge and agree that the use of cryptocurrencies involves significant risks. You are solely responsible for understanding the risks involving the use of LinkCoin and potential losses. The LinkCoin community is not responsible for any losses you may incur."
+                },
+                {
+                    "title": "4. Intellectual Property",
+                    "content": "The LinkCoin project is Open Source and released under the MIT License. You are free to copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the conditions of the license."
+                },
+                {
+                    "title": "5. User Conduct",
+                    "content": "You agree not to use the Service for any unlawful purpose or any purpose prohibited under this clause. You agree not to use the Service in any way that could damage the Service, the services, or the general business of the LinkCoin community."
+                },
+                {
+                    "title": "6. Limitation of Liability",
+                    "content": "In no event shall the LinkCoin community, nor its contributors, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose."
+                },
+                {
+                    "title": "7. Changes to Terms",
+                    "content": "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. What constitutes a material change will be determined at our sole discretion."
+                },
+                {
+                    "title": "8. Contact Us",
+                    "content": "If you have any questions about these Terms, please contact us via our community channels:"
+                }
+            ]
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "sections": [
+                {
+                    "title": "1. Introduction",
+                    "content": "Welcome to LinkCoin. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website linkcoinchain.com, use our mobile application, or engage with our decentralized network (collectively, the \"Service\")."
+                },
+                {
+                    "title": "2. Information We Collect",
+                    "content": "We are a privacy-focused project. We do not collect personal identification information (PII) such as names, addresses, or phone numbers unless you voluntarily provide them (e.g., when joining our newsletter or community channels).",
+                    "subsections": [
+                        {
+                            "title": "Blockchain Data",
+                            "content": "Please note that transactions on the LinkCoin blockchain are public. When you engage in transactions, your public wallet address and transaction details will be permanently recorded on the blockchain ledger. This is inherent to the nature of decentralized blockchains."
+                        },
+                        {
+                            "title": "Usage Data",
+                            "content": "We may collect information on how the Service is accessed and used (\"Usage Data\"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data."
+                        }
+                    ]
+                },
+                {
+                    "title": "3. Use of Data",
+                    "content": "LinkCoin uses the collected data for various purposes:",
+                    "list": [
+                        "To provide and maintain the Service",
+                        "To notify you about changes to our Service",
+                        "To allow you to participate in interactive features of our Service when you choose to do so",
+                        "To provide customer care and support",
+                        "To provide analysis or valuable information so that we can improve the Service",
+                        "To monitor the usage of the Service",
+                        "To detect, prevent and address technical issues"
+                    ]
+                },
+                {
+                    "title": "4. Disclosure of Data",
+                    "content": "We do not sell your personal data. We may disclose your Personal Data in the good faith belief that such action is necessary to:",
+                    "list": [
+                        "To comply with a legal obligation",
+                        "To protect and defend the rights or property of LinkCoin",
+                        "To prevent or investigate possible wrongdoing in connection with the Service",
+                        "To protect the personal safety of users of the Service or the public",
+                        "To protect against legal liability"
+                    ]
+                },
+                {
+                    "title": "5. Security of Data",
+                    "content": "The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security."
+                },
+                {
+                    "title": "6. Changes to This Privacy Policy",
+                    "content": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes."
+                },
+                {
+                    "title": "7. Contact Us",
+                    "content": "If you have any questions about this Privacy Policy, please contact us via our community channels:"
+                }
+            ]
+        }
+    }
+}

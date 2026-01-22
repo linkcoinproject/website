@@ -7,28 +7,9 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
-  { label: "Home", href: "/" },
-  {
-    label: "Community",
-    href: "#",
-    subMenu: [
-      { label: "Telegram", href: "https://t.me/Linkcoin_LNC" },
-      { label: "Twitter / X", href: "https://x.com/Linkcoin_LNC" },
-      { label: "GitHub", href: "https://github.com/linkcoinproject" },
-    ]
-  },
-  { label: "Explorer", href: "https://explorer.linkcoinchain.com" },
-  { label: "Mining Pool", href: "https://mine.linkcoinchain.com" },
-  {
-    label: "Wallet",
-    href: "#",
-    subMenu: [
-      { label: "Core Wallet", href: "https://github.com/linkcoinproject/linkcoin/releases" },
-    ]
-  },
-  { label: "About", href: "/#about" },
-];
+import content from "@/data/content.json";
+
+const navItems = content.navigation;
 
 export function LandingNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);

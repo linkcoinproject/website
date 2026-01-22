@@ -7,36 +7,9 @@ import { motion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 
-const faqs = [
-  {
-    question: "What is Linkcoin (LNC)?",
-    answer: "Linkcoin is one of the oldest memecoins in cryptocurrency history, created in May 2013 (UCID #26 on CoinMarketCap) as a fork of Litecoin. Originally created as a joke, it was abandoned in 2016 but has since been revived by the community.",
-  },
-  {
-    question: "How can I mine Linkcoin?",
-    answer: "Linkcoin uses the Scrypt algorithm and can be merge-mined with Litecoin, meaning you can mine both coins simultaneously. You can use any Scrypt-compatible ASIC miner or mining pool that supports merge mining.",
-  },
-  {
-    question: "Where can I buy Linkcoin?",
-    answer: "Linkcoin (LNC) is available on several exchanges including CoinEx, AscendEX, and NonKYC.io. You can trade it against USDT pairs.",
-  },
-  {
-    question: "Which wallets support Linkcoin?",
-    answer: "Linkcoin is supported by multiple wallets including Dedoo Wallet, Komodo Wallet, and our official Core Wallet. Each offers different features and security levels.",
-  },
-  {
-    question: "Is Linkcoin a serious project?",
-    answer: "While Linkcoin started as a joke in 2013, it has become a significant part of crypto history as one of the earliest memecoins and an inspiration for later projects like Dogecoin. The community revival aims to preserve this historical significance while adding modern utility.",
-  },
-  {
-    question: "What makes Linkcoin special?",
-    answer: "Linkcoin holds a unique place in crypto history as one of the earliest memecoins (UCID #26), predating even Dogecoin. It's also one of the few early coins to be successfully revived by its community.",
-  },
-  {
-    question: "How can I get involved?",
-    answer: "Join our Telegram community, follow us on Twitter, participate in mining, or contribute to development on GitHub. Linkcoin is 100% community-driven, so all contributions are welcome.",
-  },
-];
+import content from "@/data/content.json";
+
+const faqs = content.faq.items;
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -49,7 +22,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[var(--background)] font-mono text-white">
       <div className="fixed top-0 left-0 right-0 z-50">
-        <FlashUpdate 
+        <FlashUpdate
           show={true}
           message="Dedoo wallet now support Linkcoin! Click here to check it out"
           link="https://dedoo.xyz/"
@@ -120,17 +93,28 @@ export default function FAQPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold mb-4">Still have questions?</h2>
             <p className="text-[var(--text-muted)] mb-8">
-              Join our Telegram community for direct support and updates
+              Join our community for direct support and updates
             </p>
-            <motion.a
-              href="https://t.me/junkcoin_JKC"
-              target="_blank"
-              className="inline-block bg-[var(--secondary)] text-black px-8 py-3 rounded-lg font-bold hover:bg-[var(--secondary-dark)] transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Join Telegram
-            </motion.a>
+            <div className="flex flex-wrap justify-center gap-4">
+              <motion.a
+                href="https://t.me/Linkcoin_LNC"
+                target="_blank"
+                className="inline-block bg-[#0088cc] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#0077b5] transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Join Telegram
+              </motion.a>
+              <motion.a
+                href="https://discord.gg/eHe6jMgd"
+                target="_blank"
+                className="inline-block bg-[#5865F2] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#4752C4] transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Join Discord
+              </motion.a>
+            </div>
           </div>
         </section>
       </main>
