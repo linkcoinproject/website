@@ -8,7 +8,7 @@ export function Header() {
         <div className="mr-4 flex font-display">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logo-junkcoin.png"
+              src="/images/lnc4.svg"
               alt="Linkcoin Logo"
               width={24}
               height={24}
@@ -24,7 +24,7 @@ export function Header() {
           <nav className="flex items-center space-x-6 font-mono text-sm">
             {/* ...existing navigation items... */}
           </nav>
-          
+
           {/* ...existing user menu... */}
         </div>
       </div>

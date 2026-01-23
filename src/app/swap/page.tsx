@@ -11,14 +11,14 @@ export default function SwapPage() {
   return (
     <div className="min-h-screen bg-[var(--background)] font-mono text-white">
       <div className="fixed top-0 left-0 right-0 z-50">
-        <FlashUpdate 
+        <FlashUpdate
           show={true}
           message="Dedoo wallet now support Linkcoin! Click here to check it out"
           link="https://dedoo.xyz/"
         />
         <LandingNavbar />
       </div>
-      
+
       <main className="pt-[98px]">
         <div className="container mx-auto px-4">
           {/* Header Section */}
@@ -67,7 +67,7 @@ export default function SwapPage() {
             <ol className="list-decimal list-inside space-y-2 text-sm text-[var(--text-muted)]">
               <li>Create a new wallet or import existing one</li>
               <li>Save and secure your seed phrase</li>
-              <li>Select JKC as the receive currency</li>
+              <li>Select LNC as the receive currency</li>
               <li>Choose the currency you want to swap from</li>
               <li>Enter the amount and confirm the swap</li>
             </ol>

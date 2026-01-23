@@ -6,6 +6,7 @@ import { FlashUpdate } from "@/components/ui/flash-update";
 import { Search, Activity, Box, Link as LinkIcon, ArrowRight, Code, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import content from "@/data/content.json";
 
 // Add interface for mining pools
 interface MiningPool {
@@ -61,7 +62,7 @@ export default function ExplorerPage() {
   return (
     <div className="min-h-screen bg-[var(--background)] font-mono text-white">
       <div className="fixed top-0 left-0 right-0 z-50">
-        <FlashUpdate 
+        <FlashUpdate
           show={true}
           message="Dedoo wallet now support Linkcoin! Click here to check it out"
           link="https://dedoo.xyz/"
@@ -78,7 +79,7 @@ export default function ExplorerPage() {
                 Linkcoin Network
               </h1>
               <p className="text-[var(--text-muted)] mb-6">
-                Track transactions, mine JKC, and explore the network in real-time
+                Track transactions, mine LinkCoin, and explore the network in real-time
               </p>
             </div>
           </div>
@@ -91,7 +92,7 @@ export default function ExplorerPage() {
               <h2 className="text-2xl font-bold mb-6">Network Explorers</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.a
-                  href="https://explorer.junk-coin.com/"
+                  href={content.site.links.explorer}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[var(--card)] p-6 rounded-lg border border-[var(--secondary)]/10 hover:border-[var(--secondary)]/20 transition-all group"
@@ -114,7 +115,7 @@ export default function ExplorerPage() {
                 </motion.a>
 
                 <motion.a
-                  href="https://explorer-testnet.junk-coin.com/"
+                  href={content.site.links.explorerDedoo}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[var(--card)] p-6 rounded-lg border border-[var(--secondary)]/10 hover:border-[var(--secondary)]/20 transition-all group"
@@ -125,19 +126,19 @@ export default function ExplorerPage() {
                       <Code className="w-6 h-6 text-[var(--secondary)]" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-2">Testnet Explorer</h3>
+                      <h3 className="text-xl font-bold mb-2">Dedoo Explorer</h3>
                       <p className="text-[var(--text-muted)] text-sm mb-4">
-                        Explore testnet data for development purposes
+                        Modern explorer with advanced network insights
                       </p>
                       <span className="text-[var(--secondary)] text-sm flex items-center gap-2">
-                        Visit Testnet <ArrowRight className="w-4 h-4" />
+                        Visit Dedoo <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
                   </div>
                 </motion.a>
 
                 <motion.a
-                  href="https://junkpool.blockraid.io/"
+                  href={content.site.links.explorer}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[var(--card)] p-6 rounded-lg border border-[var(--secondary)] hover:border-[var(--secondary)] transition-all group md:col-span-2"
@@ -188,9 +189,8 @@ export default function ExplorerPage() {
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className={`p-2 rounded-lg flex items-center justify-center min-w-[120px] ${
-                        pool.needsWhiteBg ? 'bg-white' : 'bg-white/5'
-                      }`}>
+                      <div className={`p-2 rounded-lg flex items-center justify-center min-w-[120px] ${pool.needsWhiteBg ? 'bg-white' : 'bg-white/5'
+                        }`}>
                         <div className="relative w-[108px] h-[32px]">
                           <Image
                             src={pool.logo}
