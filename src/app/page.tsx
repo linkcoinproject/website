@@ -267,22 +267,18 @@ export default function Home() {
                     {card.description}
                   </p>
                 </div>
-                <div className={`relative z-10 ${card.buttons ? 'flex flex-col gap-3' : ''}`}>
-                  {card.buttons ? (
-                    card.buttons.map((btn) => (
-                      <a key={btn.label} href={btn.href} target="_blank" rel="noopener noreferrer">
-                        <button className={`w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 transition-all font-bold ${btn.variant === 'discord' ? 'hover:bg-[#5865F2] hover:border-[#5865F2] hover:text-white' : 'hover:bg-white hover:text-black dark:text-white dark:hover:bg-white dark:hover:text-black'}`}>
-                          {btn.label}
-                        </button>
-                      </a>
-                    ))
-                  ) : (
-                    <a href={card.href} target="_blank" rel="noopener noreferrer">
-                      <button className={`w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-primary hover:border-primary hover:text-black dark:text-white dark:hover:text-black transition-all font-bold`}>
-                        {card.buttonText}
-                      </button>
+                <div className="relative z-10 flex flex-col gap-3">
+                  {card.buttons?.map((btn: any) => (
+                    <a
+                      key={btn.label}
+                      href={btn.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full py-3 rounded-full border border-neutral-300 dark:border-neutral-700 transition-all font-bold block text-center ${btn.variant === 'discord' ? 'hover:bg-[#5865F2] hover:border-[#5865F2] hover:text-white' : 'hover:bg-white hover:text-black dark:text-white dark:hover:bg-white dark:hover:text-black'}`}
+                    >
+                      {btn.label}
                     </a>
-                  )}
+                  ))}
                 </div>
               </div>
             ))}

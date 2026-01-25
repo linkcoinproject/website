@@ -60,10 +60,6 @@
             "href": "#",
             "subMenu": [
                 {
-                    "label": "Official Pool",
-                    "href": "https://mine.linkcoinchain.com"
-                },
-                {
                     "label": "Pool Stats",
                     "href": "https://miningpoolstats.stream/linkcoin"
                 }
@@ -151,10 +147,6 @@
                     "description": "Information for those interested in scrypt mining. Participation is permissionless and optional.",
                     "icon": "construction",
                     "buttons": [
-                        {
-                            "label": "Pool Info",
-                            "href": "https://mine.linkcoinchain.com"
-                        },
                         {
                             "label": "Pool Stats",
                             "href": "https://miningpoolstats.stream/linkcoin"
@@ -291,10 +283,6 @@
             {
                 "title": "Network",
                 "links": [
-                    {
-                        "label": "Mining Pools",
-                        "href": "https://mine.linkcoinchain.com"
-                    },
                     {
                         "label": "Pool Stats",
                         "href": "https://miningpoolstats.stream/linkcoin"

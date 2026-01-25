@@ -15,12 +15,12 @@ export default function PrivacyPolicy() {
                         Last updated: {new Date().toLocaleDateString()}
                     </p>
 
-                    {legal.privacy.sections.map((section) => (
+                    {legal.privacy.sections.map((section: any) => (
                         <div key={section.title}>
                             <h2 className="text-2xl font-bold dark:text-white mt-8 mb-4">{section.title}</h2>
                             <p className="mb-4">{section.content}</p>
 
-                            {section.subsections && section.subsections.map((sub) => (
+                            {section.subsections && section.subsections.map((sub: any) => (
                                 <div key={sub.title}>
                                     <h3 className="text-xl font-semibold dark:text-white mt-6 mb-2">{sub.title}</h3>
                                     <p className="mb-4">{sub.content}</p>
@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
 
                             {section.list && (
                                 <ul className="list-disc pl-6 mb-4 space-y-2">
-                                    {section.list.map((item, i) => (
+                                    {section.list.map((item: any, i: number) => (
                                         <li key={i}>{item}</li>
                                     ))}
                                 </ul>
